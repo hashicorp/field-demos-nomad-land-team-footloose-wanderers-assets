@@ -46,7 +46,7 @@ New-Item -Path "C:/Program Files" -Name "ISC BIND 9" -ItemType "directory" -Forc
 New-Item -Path "C:/Program Files/ISC BIND 9" -Name "bin" -ItemType "directory" -Force
 New-Item -Path "C:/Program Files/ISC BIND 9" -Name "etc" -ItemType "directory" -Force
 New-Item -Path "C:/Program Files/ISC BIND 9" -Name "zones" -ItemType "directory" -Force
-(New-Object System.Net.WebClient).DownloadFile("https://downloads.isc.org/isc/bind9/9.16.6/BIND9.16.6.x64.zip", "C:/Program Files/ISC BIND 9/bind.zip")
+(New-Object System.Net.WebClient).DownloadFile("https://downloads.isc.org/isc/bind9/9.16.15/BIND9.16.15.x64.zip", "C:/Program Files/ISC BIND 9/bind.zip")
 Expand-Archive "C:/Program Files/ISC BIND 9/bind.zip" -DestinationPath "C:/Program Files/ISC BIND 9/bin"
 cd "C:/Program Files/ISC BIND 9/bin"
 
