@@ -80,4 +80,4 @@ nslookup consul.service.consul
 Get-DnsClientServerAddress
 Set-DnsClientServerAddress -InterfaceIndex 8 -ServerAddresses ("127.0.0.1", "10.64.0.254")
 
-sudo hashistack/config.sh -r 'west' -d 'cloud' -j '10.132.0.90' -x 'cloud-docker' -q '"10.64.0.254", "169.254.169.254", "8.8.8.8", "8.8.4.4"'
+sudo /hashistack/config.sh -r 'west' -d 'cloud' -j '10.132.0.95' -x 'cloud-docker' -q '"10.64.0.254", "169.254.169.254", "8.8.8.8", "8.8.4.4"'

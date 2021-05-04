@@ -72,10 +72,6 @@ case ${NAME,,} in
     *) echo -n "unknown operating system"; exit 1 ;;
 esac
 
-# Create some temporary storage for the configuration file
-sudo mkdir /hashistack
-sudo chmod -R 777 /hashistack
-
 # Disable password prompts
 echo "${USERNAME} ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/${USERNAME}
 

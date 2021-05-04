@@ -102,21 +102,17 @@ build {
     ]
 
     provisioner "file" {
-        source          = "scripts/bash/"
-        destination     = "/tmp"
+        sources          = [ "scripts/bash/", "config-server.sh" ]
+        destination     = "/tmp/"
     }
 
     provisioner "shell" {
         inline          = [
             "sudo chmod +x /tmp/hashistack.sh",
             "sudo /tmp/hashistack.sh -c '${var.stack.consul}' -n '${var.stack.nomad}' -v '${var.stack.vault}' -u '${var.ssh.username}' -p '${var.ssh.password}'",
+            "sudo mv /tmp/config-server.sh /home/${var.ssh.username}/config.sh",
             "sudo rm -r /tmp/*.sh"
         ]
-    }
-
-    provisioner "file" {
-        source          = "config-server.sh"
-        destination     = "/hashistack/config.sh"
     }
 }
 
@@ -128,8 +124,8 @@ build {
     ]
 
     provisioner "file" {
-        source          = "scripts/bash/"
-        destination     = "/tmp"
+        sources          = [ "scripts/bash/", "config-docker.sh" ]
+        destination     = "/tmp/"
     }
 
     provisioner "shell" {
@@ -138,13 +134,9 @@ build {
             "sudo /tmp/hashistack.sh -c '${var.stack.consul}' -n '${var.stack.nomad}' -v '${var.stack.vault}' -u '${var.ssh.username}' -p '${var.ssh.password}'",
             "sudo chmod +x /tmp/docker.sh",
             "sudo /tmp/docker.sh",
+            "sudo mv /tmp/config-docker.sh /home/${var.ssh.username}/config.sh",
             "sudo rm -r /tmp/*.sh"
         ]
-    }
-
-    provisioner "file" {
-        source          = "config-docker.sh"
-        destination     = "/hashistack/config.sh"
     }
 }
 
@@ -156,8 +148,8 @@ build {
     ]
 
     provisioner "file" {
-        source          = "scripts/bash/"
-        destination     = "/tmp"
+        sources          = [ "scripts/bash/", "config-podman.sh" ]
+        destination     = "/tmp/"
     }
 
     provisioner "shell" {
@@ -166,13 +158,9 @@ build {
             "sudo /tmp/hashistack.sh -c '${var.stack.consul}' -n '${var.stack.nomad}' -v '${var.stack.vault}' -u '${var.ssh.username}' -p '${var.ssh.password}'",
             "sudo chmod +x /tmp/podman.sh",
             "sudo /tmp/podman.sh",
+            "sudo mv /tmp/config-podman.sh /home/${var.ssh.username}/config.sh",
             "sudo rm -r /tmp/*.sh"
         ]
-    }
-
-    provisioner "file" {
-        source          = "config-podman.sh"
-        destination     = "/hashistack/config.sh"
     }
 }
 
