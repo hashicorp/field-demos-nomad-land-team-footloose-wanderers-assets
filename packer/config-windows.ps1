@@ -18,11 +18,14 @@ param (
 
 $Base_Directory = "c:/users/hashistack"
 
+Write-Host "Setting DNS on IPv4 Ethernet Adapter"
+Get-DnsClientServerAddress -InterfaceAlias "Ethernet" -AddressFamily "IPv4" | Set-DnsClientServerAddress -ServerAddresses ("127.0.0.1")
+
 Write-Host "Starting Consul"
 Add-Content -Path "${Base_Directory}/consul/consul_client.hcl" -Encoding ascii -Value @"
 datacenter = "${d}"
-data_dir = "c:\\users\\hashistack\\consul"
-log_file = "c:\\users\\hashistack\\consul"
+data_dir = "c:/users/hashistack/consul/"
+log_file = "c:/users/hashistack/consul/"
 client_addr = "0.0.0.0"
 bind_addr = "{{ GetInterfaceIP \"Ethernet\" }}"
 retry_interval = "5s"
@@ -43,9 +46,9 @@ Add-Content -Path "${Base_Directory}/nomad/nomad_client.hcl" -Encoding ascii -Va
 name        = "${x}"
 region      = "${r}"
 datacenter  = "${d}"
-data_dir    = "c:\\users\\hashistack\\nomad"
-log_file    = "c:\\users\\hashistack\\nomad"
-plugin_dir  = "c:\\users\\hashistack\\nomad\\plugins"
+data_dir    = "c:/users/hashistack/nomad/"
+log_file    = "c:/users/hashistack/nomad"
+plugin_dir  = "c:/users/hashistack/nomad/plugins/"
 bind_addr   = "0.0.0.0"
 
 client {

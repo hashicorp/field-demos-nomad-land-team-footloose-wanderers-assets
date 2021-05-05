@@ -92,6 +92,12 @@ packer -autocomplete-install
 boundary -autocomplete-install
 waypoint -autocomplete-install
 
+# Install CNI plugins
+echo -n "Installing CNI plugins"
+curl -s -L -o /tmp/cni-plugins.tgz https://github.com/containernetworking/plugins/releases/download/v0.9.1/cni-plugins-linux-amd64-v0.9.1.tgz
+mkdir -p /opt/cni/bin
+tar -C /opt/cni/bin -xzf /tmp/cni-plugins.tgz
+
 #############################################################################################################################
 #   Enterpise
 #############################################################################################################################

@@ -326,11 +326,11 @@ WantedBy=multi-user.target
 EOF
 
 cat <<-EOF > ${NOMAD_CONFIG}/nomad.hcl
-name        = "${x}"
+name        = "${NAME}"
 region      = "${REGION}"
 datacenter  = "${DATA_CENTER}"
-data_dir    = "${NOMAD_PACKAGE}"
-log_file    = "${NOMAD_PACKAGE}"
+data_dir    = "${NOMAD_PACKAGE}/"
+log_file    = "${NOMAD_PACKAGE}/"
 bind_addr   = "0.0.0.0"
 
 server {

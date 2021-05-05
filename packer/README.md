@@ -27,7 +27,7 @@ sudo vi variables.pkrvars.hcl
 instruqt-hashicorp
 
 export SSHPASS=Passw0rd!
-IFS=' ' read -r -a array <<< "$(gcloud compute instances list | grep on-prem-windows)"
+IFS=' ' read -r -a array <<< "$(gcloud compute instances list | grep cloud-windows)"
 export WINDOWS_IP="${array[3]}"
 sshpass -e ssh -o StrictHostKeyChecking=no hashistack@$WINDOWS_IP
 
@@ -81,3 +81,9 @@ Get-DnsClientServerAddress
 Set-DnsClientServerAddress -InterfaceIndex 8 -ServerAddresses ("127.0.0.1", "10.64.0.254")
 
 sudo /hashistack/config.sh -r 'west' -d 'cloud' -j '10.132.0.95' -x 'cloud-docker' -q '"10.64.0.254", "169.254.169.254", "8.8.8.8", "8.8.4.4"'
+
+Get-DnsClientServerAddress -InterfaceAlias "Ethernet" -AddressFamily "IPv4" | Set-DnsClientServerAddress -ServerAddresses ("127.0.0.1", "10.64.0.254")
+
+nameserver 169.254.169.254
+sudo sed -i 's|nameserver 10.64.0.254|nameserver 127.0.0.1|g' /etc/resolv.conf
+sudo systemctl restart systemd-resolved
