@@ -27,4 +27,7 @@ override.tf.json
 
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
-variables.pkvars.hcl
+variables.pkrvars.hcl
+
+# Ignore OSX File
+.DS_Store
