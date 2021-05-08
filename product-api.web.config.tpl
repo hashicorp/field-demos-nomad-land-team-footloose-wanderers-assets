@@ -59,7 +59,7 @@
     </assemblyBinding>
   </runtime>
   <connectionStrings>
-  {{ with secret "database/creds/products" }}
+  {{ with secret "database/creds/products-app" }}
     <add name="productEntities" connectionString="metadata=res://*/Models.product-db.csdl|res://*/Models.product-db.ssdl|res://*/Models.product-db.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=product-db.service.consul;initial catalog=products;user id={{ .Data.username }};password={{ .Data.password }};MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
   {{ end }}
     </connectionStrings>
