@@ -16,7 +16,7 @@ job "product-api" {
             driver = "win_iis"
 
             artifact {
-                source = "https://github.com/hashicorp/field-demos-nomad-land-team-footloose-wanderers-assets/raw/main/product-api.zip"
+                source = "https://github.com/hashicorp/field-demos-nomad-land-team-footloose-wanderers-assets/resources/raw/main/product-api.zip"
                 options {
                     checksum = "sha256:f78ec00d0f3dd24916cb9d7f16fb5ca438f1ca672d2367821b8a07f814bfc36a"
                 }

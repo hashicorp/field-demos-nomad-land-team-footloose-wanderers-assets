@@ -16,7 +16,7 @@ job "legacy-app" {
             driver = "win_iis"
 
             artifact {
-                source = "https://github.com/hashicorp/field-demos-nomad-land-team-footloose-wanderers-assets/raw/main/legacy-app.zip"
+                source = "https://github.com/hashicorp/field-demos-nomad-land-team-footloose-wanderers-assets/resources/raw/main/legacy-app.zip"
                 options {
                     checksum = "sha256:8b3cb05f8074c02e12d00e8cb4f7327288d14a0b97b9b724f42d292dc1f1affe"
                 }
