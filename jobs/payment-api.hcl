@@ -1,5 +1,5 @@
 job "payment-api" {
-    datacenters = ["demo"]
+    datacenters = ["cloud"]
     type        = "service"
     constraint {
         attribute = "${attr.driver.podman.rootless}"

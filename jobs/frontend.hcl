@@ -1,5 +1,5 @@
 job "frontend" {
-    datacenters = ["demo"]
+    datacenters = ["cloud"]
     type     = "service"
 
     constraint {

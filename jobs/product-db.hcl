@@ -1,5 +1,5 @@
 job "product-db" {
-    datacenters = ["demo"]
+    datacenters = ["on-prem"]
     type        = "service"
     constraint {
         attribute = "${attr.kernel.name}"

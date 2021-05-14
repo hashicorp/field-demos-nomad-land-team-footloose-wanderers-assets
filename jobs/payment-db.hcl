@@ -1,5 +1,5 @@
 job "payment-db" {
-    datacenters = ["demo"]
+    datacenters = ["cloud"]
     type        = "service"
     group "payment-db" {
         count = 1

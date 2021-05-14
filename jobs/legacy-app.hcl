@@ -1,5 +1,5 @@
 job "legacy-app" {
-    datacenters = ["demo"]
+    datacenters = ["on-prem"]
     type = "service"
     constraint {
         attribute = "${attr.kernel.name}"

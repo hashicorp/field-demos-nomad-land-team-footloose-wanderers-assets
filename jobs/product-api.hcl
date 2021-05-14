@@ -1,5 +1,5 @@
 job "product-api" {
-    datacenters = ["demo"]
+    datacenters = ["cloud"]
     type = "service"
     constraint {
         attribute = "${attr.kernel.name}"
