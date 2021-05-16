@@ -1,4 +1,5 @@
 job "product-db" {
+    region = "east"
     datacenters = ["on-prem"]
     type        = "service"
     constraint {

@@ -1,4 +1,5 @@
 job "legacy-app" {
+    region = "east"
     datacenters = ["on-prem"]
     type = "service"
     constraint {

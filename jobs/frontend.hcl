@@ -1,6 +1,7 @@
 job "frontend" {
+    region      = "west"
     datacenters = ["cloud"]
-    type     = "service"
+    type        = "service"
 
     constraint {
         attribute = "${attr.kernel.name}"

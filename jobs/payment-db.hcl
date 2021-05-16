@@ -1,4 +1,5 @@
 job "payment-db" {
+    region = "west"
     datacenters = ["cloud"]
     type        = "service"
     group "payment-db" {

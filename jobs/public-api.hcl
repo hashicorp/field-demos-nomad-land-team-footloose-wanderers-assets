@@ -1,4 +1,5 @@
 job "public-api" {
+    region = "west"
     datacenters = ["cloud"]
     type = "service"
     constraint {
