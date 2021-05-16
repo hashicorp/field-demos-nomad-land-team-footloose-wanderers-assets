@@ -18,7 +18,7 @@ job "product-api" {
             artifact {
                 source = "https://github.com/hashicorp/field-demos-nomad-land-team-footloose-wanderers-assets/raw/main/resources/product-api.zip"
                 options {
-                    checksum = "sha256:f78ec00d0f3dd24916cb9d7f16fb5ca438f1ca672d2367821b8a07f814bfc36a"
+                    checksum = "sha256:f94cf55361cfa8df6031c6a10cf733bae5289c23e99491a41b2b542509cf682c"
                 }
             }
 
